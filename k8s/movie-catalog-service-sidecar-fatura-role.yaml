@@ -2,7 +2,7 @@ kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   namespace: ${NAMESPACE}
-  name: movie-catalog-service-role  
+  name: movie-catalog-service-sidecar-fatura-role  
 rules: # necessario para que o MS utilize a lib Spring Cloud Kubernetes
 - apiGroups: [""] # "" indicates the core API group
   resources: ["pods","configmaps","secrets"]

@@ -1,0 +1,13 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: movie-catalog-service-sidecar-fatura-role-binding
+  namespace: ${NAMESPACE}
+subjects:
+  - kind: ServiceAccount
+    name: movie-catalog-service-service-account # mesmo service account do container principal
+    namespace: ${NAMESPACE}
+roleRef:
+  kind: Role
+  name: movie-catalog-service-sidecar-fatura-role
+  apiGroup: rbac.authorization.k8s.io
